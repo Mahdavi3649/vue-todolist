@@ -42,7 +42,15 @@ const app = new Vue({
                 done: false,
             },
             {
+                text: 'Andare a palestra ',
+                done: true,
+            },
+            {
                 text: 'Fare il pane in casa ',
+                done: false,
+            },
+            {
+                text: 'Lavare i piatti ',
                 done: true,
             }
         ]
