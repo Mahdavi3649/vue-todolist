@@ -1,3 +1,44 @@
-body{
-    background-color: aquamarine;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.container{
+    width: 700px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+
+section{
+    width: 50%;
+    height: 100%;
+    margin-top: 2rem;
+    background-color: #F5F7F7;    
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+}
+
+.add_task > input,
+.add_task > button {
+  padding: 10px 20px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #DADEE1; 
+}
+
+
+.done {
+    text-decoration: line-through;
+  }
