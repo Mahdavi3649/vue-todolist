@@ -22,8 +22,8 @@ section{
     padding: 10px 20px;
 }
 
-.add_task > input,
-.add_task > button {
+ input,
+ button {
   padding: 10px 20px;
   border: 1px solid purple;
   border-radius: 10px;
@@ -41,4 +41,12 @@ section{
 
 .done {
     text-decoration: line-through;
+  }
+
+
+  p{
+      background-color: rgb(157, 243, 157);
+      padding: 4px 20px;
+      border-radius: 5px;
+      margin-top: 2rem;
   }
