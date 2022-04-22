@@ -18,10 +18,7 @@ const app = new Vue({
     el: "#app",
     data: {
 
-        newTask: {
-            text: '',
-            done: false
-        },
+       newTask: "",
 
         tasks: [
             {
@@ -48,11 +45,14 @@ const app = new Vue({
     },
     methods: {
         addTask() {
-            this.tasks.unshift(this.newTask)
-            this.newTask = {
-                text: '',
+            let newTodo = {
+                text: this.newTask,
                 done: false
-            }
+            };
+            this.tasks.unshift(newTodo)
+            this.newTask = ''
+            //console.log(newTodo);
+            
         },
         removeTask(index){
             this.tasks.splice(index, 1);

@@ -11,18 +11,19 @@
 <body>
 
     <div id="app">
+        <!-- container -->
         <div class="container">
-            <h1>boolean</h1>
-
-            <div class="add_task">
-                <form @submit.prevent="addTask">
-                    <input type="text" v-model="newTask"  @keyup.enter="addTask">
-                    <button @click="addTask">Aggiungi</button>
-                </form>
+            <!-- header -->
+            <header>
+                <img src="https://hiringplatform.boolean.careers/images/logo.png" alt="">
+            </header>
+            <!-- form -->
+            <div>
+                <input type="text" placeholder="Nuovo To-do" v-model="newTask"  @keyup.enter="addTask">
+                <button @click="addTask">Aggiungi</button>
             </div>
-
+            <!-- section-To-do -->
             <section v-if="tasks.length > 0">
-
                 <div class="task" v-for="(task, index) in tasks">
 
                     <div class="text" :class="task.done === true ? 'done' : ''">
@@ -30,18 +31,14 @@
                     </div>
                     
                     <div class="cancel" @click="removeTask(index)">
-                    <i class="fa-solid fa-times"></i>
+                    <i class="fa-solid fa-times-circle"></i>
                     </div>
                     
                 </div>
             </section>
             <p v-else>Niente da fare per oggi! 😍</p>
         </div>
-
-        
     </div>
-
-
 
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script> 
     <script src="./app.js"></script>
