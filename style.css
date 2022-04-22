@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: powderblue;
+    background-color: #d4f1cf;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 800;
 }
@@ -63,7 +63,7 @@ input{
 
 
   p{
-      background-color: rgb(157, 243, 157);
+      background-color: rgb(135, 232, 135);
       padding: 4px 20px;
       border-radius: 5px;
       margin-top: 2rem;
