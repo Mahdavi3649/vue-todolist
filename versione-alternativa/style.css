@@ -15,8 +15,11 @@ body{
     margin-bottom: 2rem;
 }
 
+.formTodo{
+    margin-bottom: 2rem;
+}
 .container{
-    width: 700px;
+    width: 1200px;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
@@ -24,24 +27,53 @@ body{
     justify-content: center;   
 }
 
-section{
-    width: 60%;
-    height: 100%;
-    margin-top: 2rem;
+.todo,
+.completed,
+.trashed{
+    height: 350px;
+    margin: 1rem;
     background-color: #F5F7F7;    
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: 4px 3px 12px 1px black;
 }
 
+.todo{
+    min-width: 400px;
+    max-width: 450px;
+}
+.completed{
+    min-width: 250px;
+}
+.trashed{
+    min-width: 300px;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+h5{
+    background-color: #727679;
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 1.5rem;
+}
+
  input,
  button {
-    padding: 10px 20px;
-    border: 1px solid #f2f77f;
-    border-radius: 10px;
-    margin: 7px;
-    box-shadow: 4px 3px 12px darkgreen;
-    font-weight: 700;
+  padding: 10px 20px;
+  border: 1px solid #f2f77f;
+  border-radius: 10px;
+  margin: 7px;
+  box-shadow: 4px 3px 12px darkgreen;
+  font-weight: 700;
 }
 
 input{
@@ -63,19 +95,27 @@ button{
     background-color: rgb(126, 209, 158);
     border-top-left-radius: 3rem;
     border-top-right-radius: 1rem;
-    margin-top: 1rem;
+    margin-top: 10px;
 }
 
-.done {
-    text-decoration: line-through;
-  }
+.completed > .task{
+    background-color: #ece1c2;
+}
 
-.nothingToDo {
-    background-color:#95bb76;
-    color: #69674c;
+.trashed > .task{
+    background-color: #cdd582;
+} 
+
+.nothingToDo{
     padding: 4px;
-    margin-top: 4rem;
+    color: #69674c;
+    background-color:#95bb76;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border: 2px solid green;
+}
+
+
+.done{
+    text-decoration: line-through;
 }

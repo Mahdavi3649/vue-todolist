@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Todo List</title>
+</head>
+<body>
+
+    <!-- root-view -->
+    <div id="app">
+        <!-- container -->
+        <div class="container">
+            <!-- header -->
+            <header id="site_header">
+                <img src="https://hiringplatform.boolean.careers/images/logo.png" alt="">
+            </header>
+            <!-- form -->
+            <div class="formTodo">
+                <input type="text" placeholder="Add a task here" v-model="newTask"  @keyup.enter="addTask">
+                <button @click="addTask">Add</button>
+            </div>
+
+            <!-- row - sections -->
+            <div class="row">
+                <!-- section-To-do -->
+                <section class="todo "v-if="tasks.length > 0">
+
+                    <h5>ToDo List</h5>
+                    <div class="task" v-for="(task, index) in tasks">
+                        <div class="text">
+                        {{task.text}}
+                        </div>
+                        <!-- icons -->
+                        <div class="cancel">
+                            <i class="fa-solid fa-times-circle" @click="removeTask(index)"></i>
+                            <i class="fa-solid fa-circle-check" @click="completeTask(index)"></i>
+                        </div>
+                    </div>
+                   
+                </section>
+                <!-- message emptyToDo -->
+                <div class="nothingToDo" v-else>
+                     <h3>Niente da fare per oggi!</h3> 
+                </div>
+
+                <!-- section completed -->
+                <section class="completed" v-if="tasksCompleted.length > 0">
+                    <h5>Completed</h5>
+                    <!-- tasks completed -->
+                    <div class="task" v-for="(taskCom, index) in tasksCompleted">
+                        <div class="text" :class="taskCom.done === true ? 'done' : ''">
+                        {{taskCom.text}}
+                        </div>
+                        <!-- icons -->
+                        <div class="undo">
+                            <i class="fa-solid fa-rotate-left" @click="undoTask(index)"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- section trashed -->
+                <section class="trashed" v-if="trashed.length > 0">
+                    <h5>Trashed
+                        ( <a href="#" @click="emptyBinTasks">
+                            Empty Bin
+                        </a> )
+                    </h5>
+                    <!-- tasks trashed -->
+                    <div class="task" v-for="(taskT, index) in trashed">
+                        <div class="text">
+                        {{taskT.text}}
+                        </div>
+                        <!-- icons -->
+                        <div class="trash">
+                            <i class="fa-solid fa-trash-arrow-up" @click="emptyTasks(index)"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script> 
+    <script src="./main.js"></script>
+</body>
+</html>

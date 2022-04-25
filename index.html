@@ -19,8 +19,8 @@
             </header>
             <!-- form -->
             <div>
-                <input type="text" placeholder="Nuovo To-do" v-model="newTask"  @keyup.enter="addTask">
-                <button @click="addTask">Aggiungi</button>
+                <input type="text" placeholder="Add a task here" v-model="newTask"  @keyup.enter="addTask">
+                <button @click="addTask">Add</button>
             </div>
             <!-- section-To-do -->
             <section v-if="tasks.length > 0">
@@ -31,12 +31,14 @@
                     </div>
                     
                     <div class="cancel" @click="removeTask(index)">
-                       <i class="fa-solid fa-times-circle"></i>
+                        <i class="fa-solid fa-times-circle"></i>
                     </div>
-                    
                 </div>
             </section>
-            <p v-else>Niente da fare per oggi! 😍</p>
+
+            <div class="nothingToDo" v-else>
+                <h3>Niente da fare per oggi! 😍</h3> 
+           </div>
         </div>
     </div>
 
